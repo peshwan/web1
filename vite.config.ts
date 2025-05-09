@@ -27,7 +27,7 @@ const securityPlugin = (): PluginOption => {
 };
 
 export default defineConfig({
-  base: '/web/', // Set the base path for the custom domain
+  base: '/', // Set the base path for the custom domain
   build: {
     outDir: 'dist', // Specifies the output directory for the build
   },
