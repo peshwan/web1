@@ -1,0 +1,120 @@
+/* Previous CSS remains the same until the media query section */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .price-cards {
+        gap: 15px;
+    }
+
+    .price-card {
+        min-width: 100%;
+        padding: 15px;
+    }
+
+    .price-value {
+        font-size: 2.2rem;
+    }
+
+    #currencyTable {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .currency-name {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px; /* Reduced gap between flag and text */
+        padding: 0;
+        margin: 0;
+        min-width: fit-content;
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
+
+    #currencyTable th:first-child,
+    #currencyTable td:first-child {
+        position: sticky;
+        left: 0;
+        background: inherit;
+        z-index: 1;
+        padding: 8px 4px; /* Reduced padding */
+        width: auto;
+        box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+        white-space: nowrap;
+        min-width: fit-content;
+    }
+
+    #currencyTable td:first-child > div {
+        margin: 0;
+        padding: 0;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    #currencyTable td:not(:first-child) {
+        padding-left: 12px;
+        text-align: center;
+    }
+
+    #currencyTable td:first-child {
+        background-color: white;
+    }
+
+    #currencyTable tr.alternate-row td:first-child {
+        background-color: #bdbdbd83;
+    }
+
+    .flag {
+        width: 20px; /* Smaller flag size */
+        height: 14px;
+        flex-shrink: 0;
+        margin: 0;
+        vertical-align: middle;
+    }
+
+    #currencyTable th,
+    #currencyTable td {
+        padding: 8px;
+        font-size: 14px;
+        vertical-align: middle;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+
+    .price-value {
+        font-size: 1.8rem;
+    }
+
+    #currencyTable th,
+    #currencyTable td {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+
+    .currency-name {
+        font-size: 0.8rem; /* Even smaller font size for very small screens */
+        gap: 2px; /* Minimal gap */
+    }
+
+    .flag {
+        width: 18px; /* Even smaller flag for very small screens */
+        height: 12px;
+    }
+
+    .update-time {
+        font-size: 0.8rem;
+    }
+}

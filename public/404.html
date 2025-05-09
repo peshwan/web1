@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      // For Single Page Apps on GitHub Pages.
+      // Stores the intended path in sessionStorage and redirects to the app's base index.html.
+      // The main index.html then reads this path and updates history.
+
+      // The base path of your application on GitHub Pages.
+      // Since your site is at peshwan.github.io/web/, this is "/web/".
+      var appBasePath = '/web/';
+
+      // Store the full path (e.g., /web/admin?query=1#hash) from the domain root.
+      var redirectPath = window.location.pathname + window.location.search + window.location.hash;
+      sessionStorage.redirect = redirectPath;
+
+      // Redirect to the root of the SPA (appBasePath), preserving the original hash.
+      // The actual path information is now in sessionStorage.
+      window.location.replace(
+        window.location.protocol + '//' +
+        window.location.hostname +
+        (window.location.port ? ':' + window.location.port : '') +
+        appBasePath +
+        window.location.hash // Preserve original hash, though full path is in sessionStorage
+      );
+    </script>
+    <!-- Fallback content and ensure file is > 512 bytes for some browsers -->
+    <style>body{font-family: sans-serif; padding: 20px; text-align: center;} a{color: #007bff;}</style>
+  </head>
+  <body>
+    <p>If you are not redirected automatically, please <a id="redirect-link" href="/web/">click here to go to the homepage</a>.</p>
+    <script>document.getElementById('redirect-link').href = appBasePath;</script>
+    <p style="height: 512px;">&nbsp;</p> {/* Ensure content length */}
+  </body>
+</html>
