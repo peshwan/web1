@@ -11,7 +11,7 @@
         gtag('config', 'G-NLSN5KBEYF');
     </script>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/x-icon" href="/web/favicon.ico" />
     <link rel="preload" href="data:application/octet-stream;base64,aW1wb3J0IHsgU3RyaWN0TW9kZSB9IGZyb20gJ3JlYWN0JzsNCmltcG9ydCB7IGNyZWF0ZVJvb3QgfSBmcm9tICdyZWFjdC1kb20vY2xpZW50JzsNCmltcG9ydCB7IEhlbG1ldFByb3ZpZGVyIH0gZnJvbSAncmVhY3QtaGVsbWV0LWFzeW5jJzsgLy8gSW1wb3J0IEhlbG1ldFByb3ZpZGVyDQppbXBvcnQgQXBwIGZyb20gJy4vQXBwLnRzeCc7DQppbXBvcnQgJy4vaW5kZXguY3NzJzsNCg0KY3JlYXRlUm9vdChkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncm9vdCcpISkucmVuZGVyKA0KICA8U3RyaWN0TW9kZT4NCiAgICA8SGVsbWV0UHJvdmlkZXI+IHsvKiBXcmFwIEFwcCB3aXRoIEhlbG1ldFByb3ZpZGVyICovfQ0KICAgICAgPEFwcCAvPg0KICAgIDwvSGVsbWV0UHJvdmlkZXI+DQogIDwvU3RyaWN0TW9kZT4NCik7DQo=" as="script" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,14 +81,18 @@
         if (redirect && redirect != window.location.href) {
           // Check if the redirect path is different from the current URL
           // to prevent an infinite loop if the redirect target is the same.
-          // The redirect path from sessionStorage includes the base path (e.g., /web/admin).
-          // We want to update the browser's history to this path.
-          history.replaceState(null, null, redirect);
+          // The redirect path from sessionStorage might include an old base path (e.g., /web/admin).
+          // We want to update the browser's history to this path, ensuring it's relative to the root.
+          let correctedRedirect = redirect;
+          if (correctedRedirect && correctedRedirect.startsWith('/web/')) {
+            correctedRedirect = correctedRedirect.substring(4); // Remove leading '/web'
+          }
+          history.replaceState(null, null, correctedRedirect);
         }
       })();
     </script>
-  <script type="module" crossorigin src="/assets/index-BAbIajqQ.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-XBCnDaBI.css">
+  <script type="module" crossorigin src="/web/assets/index-BXvp4BmQ.js"></script>
+  <link rel="stylesheet" crossorigin href="/web/assets/index-XBCnDaBI.css">
 </head>
 <body>
     <noscript>
