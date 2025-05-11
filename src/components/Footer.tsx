@@ -21,9 +21,9 @@ export function Footer() {
                         <Link to="/privacy" className="flex items-center gap-2 hover:text-blue-600 font-semibold">
                             <span>سياسة الخصوصية</span>
                         </Link>
-                        <a href="mailto:oliverr1988@gmail.com" className="flex items-center gap-2 hover:text-blue-600 font-semibold">
+                        <a href="mailto:contact@zahabprice.online" className="flex items-center gap-2 hover:text-blue-600 font-semibold">
                             <Mail size={22} /> {/* Slightly larger */}
-                            <span>تواصل معنا</span>
+                            <span>contact@zahabprice.online</span>
                         </a>
                     </div>
                     {/* Social Icons Group: Centered */}
