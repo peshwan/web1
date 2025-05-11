@@ -1,4 +1,4 @@
-import { Facebook, Mail, MessageCircle } from 'lucide-react';
+import { Facebook, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function Footer() {
@@ -21,8 +21,7 @@ export function Footer() {
                         <Link to="/privacy" className="flex items-center gap-2 hover:text-blue-600 font-semibold">
                             <span>سياسة الخصوصية</span>
                         </Link>
-                        <a href="mailto:contact@zahabprice.online" className="flex items-center gap-2 hover:text-blue-600 font-semibold">
-                            <Mail size={22} /> {/* Slightly larger */}
+                        <a className="flex items-center gap-2 hover:text-blue-600 font-semibold">
                             <span>contact@zahabprice.online</span>
                         </a>
                     </div>
