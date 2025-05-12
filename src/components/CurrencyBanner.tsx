@@ -41,7 +41,7 @@ const CurrencyBanner: React.FC<CurrencyBannerProps> = ({ currencyRates }) => {
   return (
     <div className="currency-banner-container">
       <div className="currency-banner">
-        <div className="currency-banner-content">
+        <div className="currency-banner-content" data-nosnippet>
           {isClient && repeatedCurrencies.map((currency, index) => (
             <span key={index} className="currency-banner-item" dir="rtl">
               {currency.amount} {currency.arabicText} = {currency.rate.toLocaleString('ar-EG')} دينار عراقي
