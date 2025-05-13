@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async'; // Import Helmet from async
 import { Navigate, Route, BrowserRouter as Router, Routes, } from 'react-router-dom';
 import { fetchCurrencyRates } from './api/goldPrice'; // Add fetchCurrencyRates back
 import CurrencyBanner from './components/CurrencyBanner';
-import { CurrencyTable } from './components/CurrencyTable'; // Re-add CurrencyTable import
+import { CurrencyTable } from './components/CurrencyTable';
 import { Footer } from './components/Footer';
 import { GoldCalculator } from './components/GoldCalculator';
 import GoldInfo from './components/GoldInfo';
@@ -61,10 +61,6 @@ function HomePage() {
           })}`
         : '--';
 
-    const usdToIqdRate = manualRates?.IQD
-        ? `${(manualRates.IQD).toLocaleString('ar-EG')} دينار عراقي`
-        : '--';
-
     return (
         <div dir="rtl" className="min-h-screen bg-gray-50 flex flex-col"> {/* Added flex flex-col */}
             <Helmet>
@@ -76,7 +72,7 @@ function HomePage() {
             {/* Pass fetched banner rates to CurrencyBanner */}
             {!bannerLoading && <CurrencyBanner currencyRates={bannerCurrencyRates} />}
             <main className="flex-grow"> {/* Added main tag and flex-grow */}
-                <div className="container pt-0 pb-4 md:py-8"> {/* Removed px-4, relying on p-6 from .container. Removed redundant mx-auto. Removed pt on mobile */}
+                <div className="container mx-auto px-4 pt-0 pb-4 md:py-8"> {/* Removed pt on mobile */}
                     <div className="text-center mb-4 md:mb-8"> {/* Reduced mb on mobile */}
                     <p className="text-4xl md:text-5xl font-extrabold text-gray-900">
                         أسعار الذهب الیوم في العراق
@@ -89,8 +85,8 @@ function HomePage() {
                     </div>
                 ) : (
                     <>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8"> {/* Removed redundant max-w-6xl, mx-auto, px-4 */}
-                            <div className="transition-transform duration-200 hover:-translate-y-1 h-full"> {/* Added h-full */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto px-4 mb-8">
+                            <div className="transition-transform duration-200 hover:-translate-y-1">
                                 <PriceCard
                                     label="سعر مثقال الّذهب بالدينار العراقي"
                                     value={mithqalPrice}
@@ -98,23 +94,16 @@ function HomePage() {
                                 />
                             </div>
 
-                            <div className="transition-transform duration-200 hover:-translate-y-1 h-full"> {/* Added h-full */}
+                            <div className="transition-transform duration-200 hover:-translate-y-1">
                                 <PriceCard
                                     label="سعر الاونصه‌  الذهب  بالدولار الامريكي"
                                     value={ouncePrice}
                                     lastUpdate={lastUpdate ? `آخر تحديث: ${lastUpdate}` : ''}
                                 />
                             </div>
-                            <div className="transition-transform duration-200 hover:-translate-y-1 h-full"> {/* Added h-full */}
-                                <PriceCard
-                                    label="سعر الصرف الدولار في العراق"
-                                    value={usdToIqdRate}
-                                    lastUpdate={lastUpdate ? `آخر تحديث: ${lastUpdate}` : ''}
-                                />
-                            </div>
                         </div>
                         {/* Removed button from here */}
-                        <div className="w-full box-border transition-all duration-200 hover:shadow-lg mt-4"> {/* Added box-border */}
+                        <div className="transition-all duration-200 hover:shadow-lg rounded-2xl mt-4">
                             {/* Pass goldPriceUSD from context and bannerCurrencyRates as the currencyRates prop */}
                             <CurrencyTable goldPrice={goldPriceUSD} currencyRates={bannerCurrencyRates} />
                         </div>
