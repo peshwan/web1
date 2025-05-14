@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+// import GoldInfo from './components/GoldInfo'; // Removed self-import
+// import GoldCalculator from './components/GoldCalculator'; // Removed as GoldCalculator route is not part of this component
 
 const GoldInfo: React.FC = () => {
   useEffect(() => {
@@ -19,7 +21,7 @@ const GoldInfo: React.FC = () => {
   return (
     <>
       <Helmet>
-        <link rel="canonical" href="https://zahabprice.online/gold-info" />
+        <link rel="canonical" href="https://www.zahabprice.online/gold-info" />
         <title>أنواع الذهب وأعيرته في العراق | دليل المثقال والغرام</title>
         <meta name="description" content="تعرف على أنواع الذهب المختلفة، أعيرته (24، 22، 21، 18)، وكيفية حساب المثقال والغرام في العراق. دليل مفصل للمستثمرين والمهتمين بسوق الذهب." />
         <meta name="keywords" content="أنواع الذهب, أعيرة الذهب, المثقال, الغرام, العراق, سعر الذهب, الذهب الأبيض, الذهب الأصفر, الذهب الوردي, الاستثمار في الذهب" />
@@ -118,14 +120,14 @@ const GoldInfo: React.FC = () => {
               backgroundColor: '#f5f5f5'
             }}>العودة إلى الصفحة الرئيسية</Link>
             <span style={{ color: '#aaa', margin: '0 10px' }}>|</span>
-            <Link to="/calculate" style={{ 
+            {/* <Link to="/calculate" style={{ 
               color: '#007bff', 
               textDecoration: 'none',
               fontWeight: '600',
               padding: '8px 12px',
               borderRadius: '4px',
               backgroundColor: '#f5f5f5'
-            }}>الذهاب إلى حاسبة الذهب</Link>
+            }}>الذهاب إلى حاسبة الذهب</Link> */}
           </div>
         </div>
       </div>
@@ -134,3 +136,6 @@ const GoldInfo: React.FC = () => {
 };
 
 export default GoldInfo;
+
+// <Route path="/gold-info" element={<GoldInfo />} /> // Removed misplaced Route
+// <Route path="/calculate" element={<GoldCalculator />} /> // Removed misplaced Route
