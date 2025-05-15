@@ -1,2 +1,13 @@
-/reports/* /404.html 404
+# Force HTTPS
+http://zahabprice.online/* https://zahabprice.online/:splat 301
+http://www.zahabprice.online/* https://zahabprice.online/:splat 301
+
+# Standardize on non-www version
+https://www.zahabprice.online/* https://zahabprice.online/:splat 301
+
+# Main routes
+/calculate https://zahabprice.online/calculate 200
+/gold-info https://zahabprice.online/gold-info 200
+
+# Catch-all
 /* /index.html 200
