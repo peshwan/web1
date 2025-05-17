@@ -7,6 +7,8 @@ https://www.zahabprice.online/* https://zahabprice.online/:splat 301
 http://www.zahabprice.online/calculate https://zahabprice.online/calculate 301
 http://www.zahabprice.online/gold-info https://zahabprice.online/gold-info 301
 
+# Redirect for broken link
+http://www.zahabprice.online/calculate https://zahabprice.online/gold-calculator 301
 # Main routes
 /calculate /calculate 200
 /gold-info /gold-info 200
